@@ -44,6 +44,32 @@ Nói cách khác, đề tài tập trung vào:
 
 Đề tài **không tập trung** vào việc xây dựng app, web, giao diện người dùng, hoặc lập kỷ lục tính số Pi nhiều chữ số.
 
+### 2.1. Thứ tự ưu tiên thực hiện
+
+Ở giai đoạn hiện tại, nhóm nên ưu tiên theo thứ tự sau:
+
+```text
+Pha 1: Hoàn thành code và benchmark tối thiểu
+- Chạy đúng bản Serial.
+- Chạy đúng bản OpenMP.
+- Chạy đúng bản MPI.
+- Thống nhất format output.
+- Kiểm tra sai số, thời gian chạy, speedup, efficiency.
+- Có ít nhất một bộ kết quả benchmark ban đầu để đối chiếu.
+
+Pha 2: Mở rộng benchmark và khóa số liệu
+- Bổ sung strong scaling, weak scaling, so sánh OpenMP và MPI.
+- Rà soát tính công bằng của benchmark.
+- Chốt bộ bảng số liệu dùng cho báo cáo.
+
+Pha 3: Viết báo cáo và làm slide
+- Viết các chương báo cáo dựa trên code và số liệu đã ổn định.
+- Vẽ flowchart, biểu đồ và hình minh họa.
+- Làm slide và chuẩn bị bảo vệ.
+```
+
+Không nên đầu tư mạnh vào báo cáo và slide khi code còn chưa ổn định. Phần tài liệu chỉ nên được khóa sau khi nhóm đã xác nhận các phiên bản chương trình chạy đúng và có số liệu đủ tin cậy.
+
 ---
 
 ## 3. Thuật toán chính được lựa chọn
@@ -150,6 +176,17 @@ Chudnovsky có thể được nhắc đến ở phần **phương pháp liên qu
 
 Sản phẩm cuối cùng nên là một **chương trình benchmark chạy bằng terminal**, không phải một hệ thống phần mềm lớn.
 
+Trong ngắn hạn, sản phẩm ưu tiên trước mắt của nhóm nên là:
+
+```text
+- Code Serial, OpenMP, MPI chạy được.
+- Có lệnh biên dịch và chạy rõ ràng.
+- Có script benchmark cơ bản.
+- Có ít nhất một file CSV kết quả ban đầu để kiểm tra.
+```
+
+Sau khi các phần trên ổn định, nhóm mới chuyển sang hoàn thiện báo cáo và slide.
+
 Chương trình nên có khả năng:
 
 ```text
@@ -196,6 +233,16 @@ Có thể xem đề tài đạt yêu cầu tốt nếu thỏa các tiêu chí sa
 - Có nhận xét vì sao speedup không tuyến tính hoàn toàn.
 - Có phân tích sự khác nhau giữa OpenMP và MPI.
 - Có liên hệ với các khái niệm trong học phần: decomposition, reduction, shared memory, message passing, scalability.
+```
+
+Nếu chia theo tiến độ thực hiện, có thể xem đề tài đạt mốc kỹ thuật ban đầu khi thỏa các điều kiện ngắn hạn sau:
+
+```text
+- Serial chạy đúng và cho giá trị Pi hợp lý.
+- OpenMP chạy đúng với nhiều số thread.
+- MPI chạy đúng với nhiều số process.
+- Kết quả giữa các phiên bản gần nhau.
+- Có benchmark cơ bản và có thể xuất kết quả ra CSV.
 ```
 
 ---
@@ -436,12 +483,12 @@ Phạm vi của đề tài bao gồm việc cài đặt phiên bản tuần tự
 Do đó, trong quá trình thực hiện, nhóm cần ưu tiên:
 
 ```text
-1. Làm rõ bài toán có thể phân rã như thế nào.
-2. Cài đặt đúng các phiên bản tuần tự, OpenMP và MPI.
+1. Cài đặt đúng các phiên bản tuần tự, OpenMP và MPI.
+2. Kiểm tra tính đúng đắn và thống nhất output.
 3. Đo thời gian chạy một cách công bằng.
-4. Tính và phân tích speedup, efficiency.
-5. Giải thích các nguyên nhân khiến hiệu năng tăng hoặc giảm.
-6. Liên hệ kết quả với các khái niệm trong học phần Tính toán song song.
+4. Tạo được bộ benchmark cơ bản và file kết quả.
+5. Sau đó mới khóa nội dung báo cáo, biểu đồ và slide.
+6. Cuối cùng mới tối ưu cách trình bày và luyện bảo vệ.
 ```
 
 Thuật toán chính nên là:

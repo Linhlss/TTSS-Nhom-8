@@ -35,6 +35,16 @@ Báo cáo nên trả lời rõ các câu hỏi sau:
 
 Trọng tâm của báo cáo không phải là việc tính ra giá trị Pi, mà là **phân tích quá trình song song hóa và đánh giá hiệu năng chương trình song song**.
 
+Về mặt tiến độ thực hiện, nhóm nên đi theo thứ tự:
+
+```text
+1. Hoàn thành code và kiểm tra tính đúng đắn.
+2. Hoàn thành benchmark tối thiểu và chốt format dữ liệu.
+3. Sau đó mới viết báo cáo và làm slide.
+```
+
+Báo cáo và slide của đề tài này phụ thuộc trực tiếp vào code, kết quả đo thời gian và số liệu benchmark. Nếu làm tài liệu quá sớm, rất dễ phải sửa lại nhiều lần khi code hoặc số liệu thay đổi.
+
 ---
 
 ## 3. Khác biệt so với báo cáo mẫu
@@ -139,6 +149,15 @@ Ngoài phạm vi:
 - Có nhận xét vì sao speedup không tuyến tính hoàn toàn.
 - Có phân tích sự khác nhau giữa OpenMP và MPI.
 - Có liên hệ với các khái niệm trong học phần: decomposition, reduction, shared memory, message passing, scalability.
+```
+
+Ngoài tiêu chí hoàn thành cuối cùng, nhóm cũng nên có một **mốc hoàn thành kỹ thuật trước báo cáo**, ví dụ:
+
+```text
+- Có đủ 3 bản Serial, OpenMP, MPI chạy được.
+- Có output thống nhất giữa các phiên bản.
+- Có benchmark cơ bản để kiểm tra speedup và efficiency.
+- Có thể tái chạy chương trình và tái tạo file kết quả từ đầu.
 ```
 
 ---
@@ -264,6 +283,8 @@ Mapping:
 
 Chương này giải thích phần code và cách chạy chương trình.
 
+Ở thời điểm hiện tại, Chương 4 nên được ưu tiên hoàn thiện trước các chương còn lại, vì đây là phần phản ánh trực tiếp trạng thái thật của project. Sau khi Chương 4 và benchmark cơ bản ổn định, nhóm mới nên khóa các chương thực nghiệm, kết quả và slide.
+
 Cấu trúc chương trình có thể tổ chức như sau:
 
 ```text
@@ -356,6 +377,8 @@ Ngoài code và bảng kết quả, báo cáo nên có tối thiểu các sơ đ
 Chương này mô tả cách benchmark.
 
 Không nên chỉ chạy một lần rồi kết luận. Nên chạy nhiều cấu hình khác nhau để thấy được xu hướng hiệu năng.
+
+Về tiến độ làm việc, phần benchmark nên được hoàn thành trước khi nhóm đầu tư mạnh vào viết Chương 6 hoặc thiết kế slide. Nói cách khác, `không có benchmark ổn định thì chưa nên chốt báo cáo`.
 
 Ở mục **5.9. Quy tắc đo thời gian công bằng**, nên mô tả cụ thể hơn:
 
@@ -755,6 +778,15 @@ Phân rã dữ liệu
 ```
 
 Vì vậy, khi viết báo cáo, nhóm cần ưu tiên các phần liên quan đến **song song hóa và đánh giá hiệu năng**. Phần công thức tính Pi chỉ cần đủ để giải thích thuật toán, không nên biến thành trọng tâm chính.
+
+Nhưng về thứ tự triển khai công việc, nhóm nên ưu tiên:
+
+```text
+1. Hoàn thiện code.
+2. Kiểm tra độ đúng và benchmark cơ bản.
+3. Khóa số liệu.
+4. Sau đó mới hoàn thiện báo cáo và slide.
+```
 
 ---
 

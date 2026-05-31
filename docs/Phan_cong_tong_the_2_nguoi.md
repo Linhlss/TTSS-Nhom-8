@@ -30,6 +30,33 @@ Nhóm áp dụng nguyên tắc:
 - Mỗi người đều phải có phần việc ở cả 3 mảng: kỹ thuật, báo cáo, thuyết trình.
 - Mỗi kết quả quan trọng đều có người phụ trách chính và người phối hợp kiểm tra.
 - Các phần dùng chung như aim, scope, bộ tham số benchmark, format output và kết luận phải được thống nhất bởi cả nhóm.
+- Trong tiến độ thực hiện, code và benchmark luôn được ưu tiên trước báo cáo và slide.
+
+---
+
+## Thứ tự ưu tiên thực hiện
+
+Nhóm nên làm theo 3 pha:
+
+### Pha 1: Hoàn thành kỹ thuật cốt lõi
+
+- Chốt cấu trúc code.
+- Hoàn thiện `Serial`, `OpenMP`, `MPI`.
+- Thống nhất output.
+- Kiểm tra độ đúng và sai số.
+- Chạy benchmark cơ bản và xuất CSV.
+
+### Pha 2: Hoàn thiện benchmark và khóa số liệu
+
+- Mở rộng strong scaling, weak scaling và so sánh OpenMP/MPI.
+- Kiểm tra lại tính công bằng của benchmark.
+- Chốt bảng số liệu và biểu đồ sẽ dùng.
+
+### Pha 3: Viết báo cáo và làm slide
+
+- Viết báo cáo dựa trên code và số liệu đã ổn định.
+- Vẽ flowchart, hoàn thiện hình minh họa.
+- Làm slide và chuẩn bị bảo vệ.
 
 ---
 
@@ -43,8 +70,8 @@ Người 1 phụ trách chính các nội dung sau:
 - Xây dựng bản song song bằng OpenMP.
 - Thiết kế cấu trúc code dùng chung giữa các phiên bản.
 - Xử lý các nội dung liên quan đến `reduction`, `race condition`, `shared memory`.
-- Viết phần lý thuyết và phần phân tích thiết kế thuật toán.
-- Chuẩn bị sơ đồ thuật toán tuần tự và sơ đồ OpenMP.
+- Sau khi code ổn định, viết phần lý thuyết và phần phân tích thiết kế thuật toán.
+- Sau khi benchmark ổn định, chuẩn bị sơ đồ thuật toán tuần tự và sơ đồ OpenMP.
 
 ### Người 2: MPI, benchmark, phân tích thực nghiệm và đánh giá
 
@@ -53,19 +80,19 @@ Người 2 phụ trách chính các nội dung sau:
 - Xây dựng bản song song bằng MPI.
 - Thiết lập script benchmark và tổ chức lưu kết quả.
 - Chạy thực nghiệm và tổng hợp dữ liệu.
-- Tính toán và trình bày các bảng `time`, `speedup`, `efficiency`, `error`.
-- Viết phần kịch bản thực nghiệm, kết quả và đánh giá.
-- Chuẩn bị sơ đồ MPI và các biểu đồ số liệu.
+- Sau khi benchmark ổn định, tính toán và trình bày các bảng `time`, `speedup`, `efficiency`, `error`.
+- Sau khi số liệu ổn định, viết phần kịch bản thực nghiệm, kết quả và đánh giá.
+- Sau khi số liệu ổn định, chuẩn bị sơ đồ MPI và các biểu đồ số liệu.
 
 ### Phần hai người cùng chịu trách nhiệm
 
 - Chốt aim, scope, tiêu chí hoàn thành.
 - Thống nhất bộ tham số đầu vào và định dạng output.
 - Kiểm tra tính đúng đắn giữa các phiên bản.
-- Viết mở đầu và kết luận.
-- Ghép báo cáo hoàn chỉnh.
-- Làm slide tổng thể.
-- Tập thuyết trình và chuẩn bị trả lời phản biện.
+- Sau khi code và benchmark ổn định, viết mở đầu và kết luận.
+- Sau khi báo cáo gần hoàn tất, ghép báo cáo hoàn chỉnh.
+- Sau khi số liệu đã khóa, làm slide tổng thể.
+- Cuối cùng tập thuyết trình và chuẩn bị trả lời phản biện.
 
 ---
 
@@ -177,16 +204,17 @@ Nhóm được xem là hoàn thành đúng định hướng nếu có đủ các
 2. Cài đặt đủ 3 phiên bản: `Serial`, `OpenMP`, `MPI`.
 3. Bảo đảm các phiên bản cho kết quả gần đúng và sai số hợp lý.
 4. Có cơ chế đo thời gian công bằng và nhất quán.
-5. Chạy đủ các thí nghiệm chính:
+5. Chạy đủ benchmark cơ bản và lưu được file kết quả.
+6. Sau đó mới mở rộng các thí nghiệm chính:
    - ảnh hưởng của `N`,
    - strong scaling,
    - weak scaling,
    - so sánh OpenMP và MPI.
-6. Có bảng và biểu đồ cho `time`, `speedup`, `efficiency`, `error`.
-7. Có flowchart tuần tự, OpenMP và MPI.
-8. Có báo cáo đầy đủ các chương theo cấu trúc đã thống nhất.
-9. Có slide bảo vệ rõ ràng, nhất quán.
-10. Có phân tích nguyên nhân của overhead, reduction cost và giới hạn phần cứng.
+7. Có bảng và biểu đồ cho `time`, `speedup`, `efficiency`, `error`.
+8. Có flowchart tuần tự, OpenMP và MPI.
+9. Có báo cáo đầy đủ các chương theo cấu trúc đã thống nhất.
+10. Có slide bảo vệ rõ ràng, nhất quán.
+11. Có phân tích nguyên nhân của overhead, reduction cost và giới hạn phần cứng.
 
 ---
 
